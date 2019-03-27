@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" type="text/css">
+<title>SF Trees</title>
+</head>
+<div class = "container">
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://usf-cs360-2017.github.io/portfolio-Ljfernando/">
+                    Lance Fernando
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Visualization</a>
+                    </li>
+                    <li>
+                        <a href="#About">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+  </header>
+</div>
+
+<!-- <h2 style = "text-align:center">About The Data</h2> -->
+
+<body>
+<br><br>
+<center><h1>San Francisco Craigslist </h1></center>
+<hr>
+<svg id= "chloropleth" width="960" height="600" style="margin:auto"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="script.js"></script>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+<!-- <hr>
+<row>
+		<h2 id = "About">About The Data</h2>
+		<div width = "400">
+		<p>The full dataset is published on <a href = https://data.sfgov.org/City-Infrastructure/Tree-Maintenance-2016/d9d2-cuwu>OpenDataSF</a>. It contains 311 calls that were focused on <strong>tree maintenance</strong> and opened between January 1st, 2016 and January 1st, 2017. There are about <strong>7500 observations</strong> and <strong>16 variables</strong>. The variables in focus for this visualization are the status of the call (open or closed), district, address, geospatial coordinates and written details of the incident. The data used to draw the basemap as well as district boundaries is located <a href = https://data.sfgov.org/Geographic-Locations-and-Boundaries/Supervisor-Districts-as-of-April-2012/xz9b-wyfc>here</a>.</p>
+		<br>
+		</div>
+		<hr>
+		<h2>Interpretation</h2>
+		<div width = "400">
+		<p>This visualization is both a chloropleth and a non-proportional symbol map. It first utilizes the chloropleth technique as its foundation where darker coloring indicates a greater amount of incidents occuring in that respective district. The color steps were chosen to maintain a proportional balance of colors on the map. Hovering over a district will also activate a tool-tip at the top left with info regarding that district. When clicking on a specific district, it will activate the non-proportional symbol map by displaying specific incidents that occured in the chosen district. Hovering over the points will also activate a tool-tip at the top left with info regarding the specific incident.
+		</p>
+		</div>
+		<hr>
+		<h2>The Takeaway</h2>
+		<p></p>
+</p>
+</row>
+ --></body>
