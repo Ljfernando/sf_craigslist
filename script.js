@@ -32,9 +32,9 @@ var background = svg.append("rect")
 //         .style("font-family", "sans-serif")
 //         .text("San Francisco Craigslist Rent");
 
-// var color = d3.scaleThreshold()
-//     .domain([300, 450, 570, 900, 1000])
-//     .range(["#F0FFFF", "#ffffcc", "#c2e699", "#78c679", "#31a354", "#006837"]);
+var color = d3.scaleOrdinal()
+    .domain([0, 1, 2, 3])
+    .range(["#3978af", "#55a734", "#634295", "#d11b1b"]);
 
 var x = d3.scaleLinear()
     .domain([300, 1200])
@@ -160,6 +160,9 @@ function drawMap(error, basemap, streets) {
 	    })
 	  .attr("r", 4.5)
 	  .attr("class", "symbol")
+	  .attr("fill", function(d){
+	  	return(color(d.price_bucket))
+	  })
 	  .on("mouseover", function(d) {
 	    body.html("<table border=0 cellspacing=0 cellpadding=2>" + "\n" +
 	    	// "<tr><th>Title:</th><td>" + d.title + "</td></tr>" + "\n" +
@@ -212,6 +215,7 @@ function drawMap(error, basemap, streets) {
 		.style("font-weight", "bold")
 		.style("font-family", "sans-serif")
 		.text("$0 - $2,650")
+		.style("fill", color(1))
 		.on("mouseover", function(d){
 			symbols.filter(function(e){
 					return e.price_bucket != 0})
@@ -232,6 +236,7 @@ function drawMap(error, basemap, streets) {
 		.style("font-weight", "bold")
 		.style("font-family", "sans-serif")
 		.text("$2,651 - $3,475")
+		.style("fill", color(2))
 		.on("mouseover", function(d){
 			symbols.filter(function(e){
 					return e.price_bucket != 1})
@@ -250,6 +255,7 @@ function drawMap(error, basemap, streets) {
 		.style("font-weight", "bold")
 		.style("font-family", "sans-serif")
 		.text("$3,476 - $4,382")
+		.style("fill", color(0))
 		.on("mouseover", function(d){
 			symbols.filter(function(e){
 					return e.price_bucket != 2})
@@ -269,6 +275,7 @@ function drawMap(error, basemap, streets) {
 		.style("font-weight", "bold")
 		.style("font-family", "sans-serif")
 		.text("$4,383 - $17,700")
+		.style("fill", color(3))
 		.on("mouseover", function(d){
 			symbols.filter(function(e){
 					return e.price_bucket != 3})
