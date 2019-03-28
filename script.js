@@ -15,13 +15,13 @@ var svg = d3.select("body").select("#chloropleth"),
     active = d3.select(null);
 
 
-
+var clicked = false
 var background = svg.append("rect")
 	    .attr("class", "background")
 	    .attr("width", width)
 	    .attr("height", height)
 	    .style("stroke", "grey")
-	    .style("stroke-width", "5");
+	    .style("stroke-width", "5")
 
 // svg.append("text")
 //         .attr("x", 10)
@@ -181,6 +181,7 @@ function drawMap(error, basemap, streets) {
 	var text_x = 720
 	var text_y = 400
 
+
 	svg.append("rect")
 	    .attr("class", "legend")
 	    .attr("width", 250)
@@ -207,6 +208,11 @@ function drawMap(error, basemap, streets) {
 		.style("font-family", "sans-serif")
 		.text("To Filter Bubbles")
 
+    background.on("click", function(d){
+    	clicked = false
+    	symbols.style("visibility", "visible")
+    })
+
 	  svg.append('text')
 	  	.attr("x", text_x)
 		.attr("y", text_y+20)
@@ -217,15 +223,29 @@ function drawMap(error, basemap, streets) {
 		.text("$0 - $2,650")
 		.style("fill", color(1))
 		.on("mouseover", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 0})
-					.style("visibility", "hidden")
-
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 0})
+						.style("visibility", "hidden")
+			}
 		})
 		.on("mouseout", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 0})
-					.style("visibility", "visible")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 0})
+						.style("visibility", "visible")
+			}
+		})
+		.on("click", function(d){
+			if(!clicked){
+				clicked = true
+				symbols.filter(function(e){
+						return e.price_bucket != 0})
+						.style("visibility", "hidden")
+			}else{
+				symbols.style("visibility", "visible")
+			}
+
 		})
 
 	svg.append('text')
@@ -238,15 +258,30 @@ function drawMap(error, basemap, streets) {
 		.text("$2,651 - $3,475")
 		.style("fill", color(2))
 		.on("mouseover", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 1})
-					.style("visibility", "hidden")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 1})
+						.style("visibility", "hidden")
+			}
 		})
 		.on("mouseout", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 1})
-					.style("visibility", "visible")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 1})
+						.style("visibility", "visible")
+			}
 		})
+		.on("click", function(d){
+			if(!clicked){
+				clicked = true
+				symbols.filter(function(e){
+						return e.price_bucket != 1})
+						.style("visibility", "hidden")
+			}else{
+				symbols.style("visibility", "visible")
+			}
+		})
+
 	svg.append('text')
 	  	.attr("x", text_x)
 		.attr("y", text_y+120)
@@ -257,14 +292,28 @@ function drawMap(error, basemap, streets) {
 		.text("$3,476 - $4,382")
 		.style("fill", color(0))
 		.on("mouseover", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 2})
-					.style("visibility", "hidden")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 2})
+						.style("visibility", "hidden")
+			}
 		})
 		.on("mouseout", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 2})
-					.style("visibility", "visible")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 2})
+						.style("visibility", "visible")
+			}
+		})
+		.on("click", function(d){
+			if(!clicked){
+				clicked = true
+				symbols.filter(function(e){
+						return e.price_bucket != 2})
+						.style("visibility", "hidden")
+			}else{
+				symbols.style("visibility", "visible")
+			}
 		})
 
 	svg.append('text')
@@ -277,16 +326,29 @@ function drawMap(error, basemap, streets) {
 		.text("$4,383 - $17,700")
 		.style("fill", color(3))
 		.on("mouseover", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 3})
-					.style("visibility", "hidden")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 3})
+						.style("visibility", "hidden")
+			}
 		})
 		.on("mouseout", function(d){
-			symbols.filter(function(e){
-					return e.price_bucket != 3})
-					.style("visibility", "visible")
+			if(!clicked){
+				symbols.filter(function(e){
+						return e.price_bucket != 3})
+						.style("visibility", "visible")
+			}
 		})
-
+		.on("click", function(d){
+			if(!clicked){
+				clicked = true
+				symbols.filter(function(e){
+						return e.price_bucket != 3})
+						.style("visibility", "hidden")
+			}else{
+				symbols.style("visibility", "visible")
+			}
+		})
 
 
 
