@@ -90,7 +90,6 @@ path.street {
 
 circle.symbol {
   fill-opacity: 0.5;
-  /*fill: #d11b1b;*/
   stroke: white;
   stroke-width: 1px;
 }
