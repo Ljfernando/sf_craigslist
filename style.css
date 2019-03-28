@@ -7,15 +7,37 @@ html {
 body {
   text-align: center;
   font-family: sans-serif;
-  font-size: 12pt;
+  font-size: 24pt;
   margin: auto
-  padding: 100em;
+  padding: 75em;
 }
 
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
 
 .background {
   fill: #bcd6ff;
   pointer-events: all;
+}
+.legend {
+  fill: #ffffff;
 }
 
 p {
@@ -31,6 +53,14 @@ h2 {
   font-size: 18pt;
 }
 
+th {
+  font-size:14pt;
+}
+
+td {
+  font-size:14pt;
+}
+
 
 path.land {
   fill: #dddddd;
@@ -38,13 +68,13 @@ path.land {
 }
 
 path.district {
-  stroke: white;
-  stroke-width: 2px;
+  stroke: grey;
+  stroke-width: 1.5px;
   pointer-events: none;
 }
 
 path.street {
-  stroke: black;
+  stroke: white;
   stroke-width: 1px;
   pointer-events: none;
 }
@@ -59,8 +89,8 @@ path.street {
 }
 
 circle.symbol {
-  fill-opacity: 0.8;
-  fill: #8B4513;
+  fill-opacity: 0.5;
+  fill: #d11b1b;
   stroke: white;
   stroke-width: 1px;
 }
@@ -1673,39 +1703,6 @@ pre code {
 }
 .my-svg{
 
-}
-.background {
-  fill: #bcd6ff;
-  pointer-events: all;
-}
-
-path.land {
-  fill: #dddddd;
-  stroke: none;
-}
-
-path.district {
-  stroke: grey;
-  stroke-width: 1.5px;
-  pointer-events: none;
-}
-
-path.street {
-  stroke: white;
-  stroke-width: 1px;
-  pointer-events: none;
-}
-
-.active {
-  fill: orange !important;
-  stroke-width: 1.5px !important;
-}
-
-circle.symbol {
-  fill-opacity: 0.8;
-  fill: #8B4513;
-  stroke: white;
-  stroke-width: 1px;
 }
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
